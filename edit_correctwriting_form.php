@@ -238,6 +238,7 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
         $attrs = array('style' => 'display: inline;', 'readonly' => 'readonly');
         $attrs['rows'] = $rows;
         $attrs['cols'] = $cols;
+        $attrs['style'] = 'display: inline-block'; // commit 8
         $begin = html_writer::start_tag('textarea', $attrs);
         $end = html_writer::end_tag('textarea');
         return $begin . $newtext . $end;
