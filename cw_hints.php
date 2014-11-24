@@ -116,7 +116,7 @@ class qtype_correctwriting_hintwheretxt extends qtype_specific_hint {
      */
     protected $mistake1;//commit 4
     /** @var token(s) descriptions for the hint or value if no description available. */
-    protected $token = '';
+    protected $tokens = ['']; //comment 7
 
     public function hint_type() {
         return qtype_specific_hint::CHOOSEN_MULTIPLE_INSTANCE_HINT;
