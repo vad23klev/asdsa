@@ -41,7 +41,8 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
 class qtype_correctwriting_hintwhatis extends qtype_specific_hint {
 
     /** @var mistake, with which this hint is associated. */
-    protected $mistake1;
+    //commit 2
+    protected $mistake;
     /** @var token(s) descriptions for the hint. */
     protected $tokendescr;
 
