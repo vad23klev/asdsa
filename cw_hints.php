@@ -114,7 +114,7 @@ class qtype_correctwriting_hintwheretxt extends qtype_specific_hint {
     /**
      * @var qtype_correctwriting_response_mistake, with which this hint is associated.
      */
-    protected $mistake;
+    protected $mistake1;//commit 4
     /** @var token(s) descriptions for the hint or value if no description available. */
     protected $token = '';
 
