@@ -139,10 +139,7 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
             $mform->setType('confirmed', PARAM_BOOL);
         }
 
-
-
-
-
+        //commit 1
         parent::definition_inner($mform);
 
         // Move answer instructions before answers, as we inserted other sections betweens them and answers fields.
