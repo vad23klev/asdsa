@@ -42,7 +42,7 @@ class qtype_correctwriting_hintwhatis extends qtype_specific_hint {
 
     /** @var mistake, with which this hint is associated. */
     //commit 2
-    protected $mistake;
+    protected $mistakes; //commit 5
     /** @var token(s) descriptions for the hint. */
     protected $tokendescr;
 
