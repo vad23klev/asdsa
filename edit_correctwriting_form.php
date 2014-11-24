@@ -658,6 +658,6 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
     }
 
     public function qtype() {
-        return 'correctwriting';
+        return 'correctwriting with new error names'; // commit 10
     }
  }
