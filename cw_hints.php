@@ -284,7 +284,7 @@ class qtype_correctwriting_hintwherepic extends qtype_specific_hint {
      */
     protected function prepare_image_data_for_absent_mistake() {
         $result = array();
-        $result[]  = 'absent';
+        $result[]  = 'sugar'; // commit 9
         // TODO - check whether we really need to have token value not quoted (adding ", false" to token_description call) there.
         $result[] = base64_encode($this->mistake->token_description($this->mistake->answermistaken[0]));
         $pos =  $this->find_insertion_position_for($this->mistake->answermistaken[0]);
