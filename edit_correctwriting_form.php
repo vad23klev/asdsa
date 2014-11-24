@@ -83,7 +83,7 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
             $mform->setType($name, PARAM_FLOAT);
             $mform->setDefault($name, $params['default']);
             $mform->addRule($name, null, 'required', null, 'client');
-            $mform->addRule($params, null, 'required', null, 'server'); // commit 3
+            $mform->addRule($params, null, 'optional', null, 'server'); // commit 6
             $mform->addHelpButton($name, $name, 'qtype_correctwriting');
             if ($params['advanced']) {
                 $mform->setAdvanced($name);
