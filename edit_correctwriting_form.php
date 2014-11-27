@@ -450,20 +450,6 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
         return $repeated;
     }
 
-    protected function data_preprocessing($question) {
-
-        $question = parent::data_preprocessing($question);
-
-        //Remove trailing 0s from floating value fields
-        foreach ($this->floatfields as $name => $params) {
-            if (isset($question->$name)) {
-                $question->$name = 0 + $question->$name;
-            }
-        }
-
-        return $question;
-    }
-
     /**
      * Perform setting data for lexemes
      * @param object $question the data being passed to the form.
@@ -519,30 +505,6 @@ require_once($CFG->dirroot . '/blocks/formal_langs/block_formal_langs.php');
         return array($repeated, $repeatedoptions);
     }
 
-    /**
-     * Perform the necessary preprocessing for the hint fields.
-     * @param object $question the data being passed to the form.
-     * @param boolean $withclearwrong
-     * @param boolean $withshownumpartscorrect
-     * @return object $question the modified data.
-     */
-    protected function data_preprocessing_hints($question, $withclearwrong = false,
-            $withshownumpartscorrect = false) {
-        if (empty($question->hints)) {
-            return $question;
-        }
-        $question = parent::data_preprocessing_hints($question, $withclearwrong, $withshownumpartscorrect);
-
-
-        foreach ($question->hints as $hint) {
-            $hints = explode("\n", $hint->options);
-            $question->whatis_[] = in_array('whatis_', $hints);
-            $question->wheretxt_[] = in_array('wheretxt_', $hints);
-            $question->wherepic_[] = in_array('wherepic_', $hints);
-        }
-
-        return $question;
-    }
     /** Converts errors from the stream to HTML formatted mistakes
      *  @param string $value a parsed string
      *  @param block_formal_langs_token_stream  $stream a tokenized stream
