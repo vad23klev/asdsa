@@ -56,7 +56,7 @@ class qtype_correctwriting_hintwhatis extends qtype_specific_hint {
     public function __construct($question, $hintkey, $mistake) {
         $this->question = $question;
         $this->hintkey = $hintkey;
-        $this->mistake = $mistake;
+        $this->mistakes = $mistake; //commit 11
         if ($mistake !== null) {
             $this->tokendescr = $this->mistake->token_descriptions();
         }
@@ -82,7 +82,7 @@ class qtype_correctwriting_hintwhatis extends qtype_specific_hint {
 
     public function penalty_for_specific_hint($response = null) {
         $penalty = $this->question->whatishintpenalty;
-        if (is_a($this->mistake, 'qtype_correctwriting_lexeme_absent_mistake')) {
+        if (is_a($this->mistakes, 'qtype_correctwriting_lexeme_absent_mistake')) { //commit 11
             $penalty *= $this->question->absenthintpenaltyfactor;
         }
         return $penalty;
@@ -94,8 +94,8 @@ class qtype_correctwriting_hintwhatis extends qtype_specific_hint {
     }
 
     public function render_hint($renderer, question_attempt $qa, question_display_options $options, $response = null) {
-        if ($this->mistake !== null) {
-            $hinttext = new qtype_poasquestion_string($this->mistake->token_descriptions(true));
+        if ($this->mistakes !== null) {//commit 11
+            $hinttext = new qtype_poasquestion_string($this->mistakes->token_descriptions(true)); //commit 11
             // Capitalize first letter.
             $hinttext[0] = textlib::strtoupper($hinttext[0]);
             return $hinttext;
